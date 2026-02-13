@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Will You Be My Valentine?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+
+
+
+
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffe2eb; /* Baby Pink */
+            font-family: Arial, sans-serif;
+            color: black;
+            overflow: hidden;
+        }
+
+        h1 {
+    	margin-top: 60px;
+    	font-size: 20px;
+    	font-family: 'Poiret One', cursive;
+    	color: black;
+    	letter-spacing: 1px;
+}
+	h2 {
+    	margin-top: 60px;
+    	font-size: 40px;
+    	font-family: 'Poiret One', cursive;
+	text-transform: uppercase;
+    	color: black;
+    	letter-spacing: 1px;
+}
+	h3 {
+    	margin-top: 150px;
+    	font-size: 30px;
+    	font-family: 'Poiret One', cursive;
+    	color: black;
+    	letter-spacing: 1px;
+}
+
+	h4 {
+    	margin-top: 100px;
+    	font-size: 30px;
+    	font-family: 'Poiret One', cursive;
+    	color: black;
+    	letter-spacing: 1px;
+}
+
+	h5 {
+    	margin-top: 150px;
+    	font-size: 60px;
+    	font-family: 'Poiret One', cursive;
+    	color: black;
+    	letter-spacing: 1px;
+}
+
+        .photo {
+            width: 500px;
+            height: 220px;
+            border-radius: 20px;
+            margin: 15px;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+        }
+
+	.photos {
+            width: 220px;
+            height: 450px;
+            border-radius: 20px;
+            margin: 40px;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+        }
+
+/* Left corner photo */
+#cornerLeft {
+    position: fixed;
+    bottom: 20px;
+    left: 150px;
+}
+
+/* Right corner photo */
+#cornerRight {
+    position: fixed;
+    bottom: 20px;
+    right: 150px;
+}
+
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        #yesBtn {
+            background-color: #00ff88;
+            color: black;
+        }
+
+        #noBtn {
+            background-color: red;
+            color: white;
+            position: absolute;
+        }
+
+        .heart {
+            position: absolute;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            from { transform: translateY(100vh); }
+            to { transform: translateY(-10vh); }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Good Morning my love ☀️, I just wanted to surprise you with valentine's proposal but tujhe pata nhi kyu lagta hai that I wont understand ki u want me to ask you for valentine's. DW baby ik and I will always ask you for this ❤️, so chill maar. And mehnat dekhri hai bhai ki 👀 website banara tha baby talent dekh tu bass. Acha chhd yeh sab tu main yeh bata 😙</h1>
+
+<h2>Would you like to be my valentine's my baby girl 🌸🫀?</h2>
+
+<!-- 3 PHOTO OPTIONS -->
+<img src="photo1.jpg" class="photos"id="cornerLeft">
+<img src="photo2.jpg" class="photo">
+<img src="photo3.jpg" class="photos"id="cornerRight">
+
+<div class="buttons">
+    <button id="yesBtn" onclick="sayYes()">YESSSSSSSSSS 🫦</button>
+    <button id="noBtn">NO (Option I mean 🙈💋)</button>
+</div>
+
+<script>
+function sayYes() {
+    document.body.innerHTML =
+    "<h4>Let's Fucking Gooooooooooooooooooo !!!! 🥳</h4><h3>I Love Youuuuuu 🫶 and I always will and I promise to be the best for you ever. </h3><h5>🌸💋😽🫦❤️✨🫀</h5>";
+}
+
+/* FLOATING UNPRESSABLE NO BUTTON 😈 */
+const noBtn = document.getElementById("noBtn");
+
+document.addEventListener("mousemove", (e) => {
+    const rect = noBtn.getBoundingClientRect();
+    const distance = Math.hypot(
+        e.clientX - (rect.left + rect.width/2),
+        e.clientY - (rect.top + rect.height/2)
+    );
+
+    if(distance < 120){
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 50);
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    }
+});
+
+/* Floating hearts */
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.innerHTML = "💋";
+    heart.classList.add("heart");
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = (20 + Math.random()*20) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{heart.remove();},5000);
+},300);
+
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.innerHTML = "😽";
+    heart.classList.add("heart");
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = (20 + Math.random()*20) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{heart.remove();},5000);
+},300);
+
+</script>
+
+</body>
+</html>
